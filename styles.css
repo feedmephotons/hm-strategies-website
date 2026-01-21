@@ -472,10 +472,6 @@ h4 { font-size: 1.125rem; }
 .positioning {
     padding: var(--space-3xl) 0;
     background-color: var(--white);
-    background-image: url('assets/images/texture-light.png');
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: multiply;
 }
 
 .positioning-grid {
@@ -660,10 +656,6 @@ h4 { font-size: 1.125rem; }
 .approach {
     padding: var(--space-3xl) 0;
     background-color: var(--white);
-    background-image: url('assets/images/texture-light.png');
-    background-size: cover;
-    background-position: center bottom;
-    background-blend-mode: multiply;
 }
 
 .approach-grid {
@@ -773,7 +765,7 @@ h4 { font-size: 1.125rem; }
     padding: var(--space-3xl) 0;
     background-color: var(--cream);
     background-image:
-        linear-gradient(rgba(250, 248, 245, 0.7), rgba(250, 248, 245, 0.6)),
+        linear-gradient(rgba(250, 248, 245, 0.92), rgba(250, 248, 245, 0.9)),
         url('assets/images/texture-cta.png');
     background-size: cover;
     background-position: center;
@@ -1094,11 +1086,53 @@ h4 { font-size: 1.125rem; }
    ============================================ */
 .testimonial {
     padding: var(--space-3xl) 0;
-    background-color: var(--white);
-    background-image: url('assets/images/texture-light.png');
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: multiply;
+    background-color: var(--cream);
+}
+
+.testimonial-slider {
+    position: relative;
+    min-height: 280px;
+}
+
+.testimonial-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s var(--ease-out), visibility 0.6s;
+}
+
+.testimonial-slide.active {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+}
+
+.testimonial-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: var(--space-lg);
+}
+
+.testimonial-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--gray-300);
+    cursor: pointer;
+    transition: all var(--duration-normal) var(--ease-out);
+}
+
+.testimonial-dot:hover {
+    background-color: var(--gray-400);
+}
+
+.testimonial-dot.active {
+    background-color: var(--accent);
+    transform: scale(1.25);
 }
 
 .testimonial-content {

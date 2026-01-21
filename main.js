@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initContactForm();
     initSmoothScroll();
     initCounterAnimation();
+    initTestimonialSlider();
 });
 
 /**
@@ -262,6 +263,60 @@ function initSmoothScroll() {
             }
         });
     });
+}
+
+/**
+ * Testimonial slider
+ */
+function initTestimonialSlider() {
+    const slider = document.getElementById('testimonial-slider');
+    if (!slider) return;
+
+    const slides = slider.querySelectorAll('.testimonial-slide');
+    const dots = document.querySelectorAll('.testimonial-dot');
+    let currentSlide = 0;
+    let autoplayInterval;
+
+    function goToSlide(index) {
+        // Remove active from all
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+
+        // Set new active
+        currentSlide = index;
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+    }
+
+    function nextSlide() {
+        const next = (currentSlide + 1) % slides.length;
+        goToSlide(next);
+    }
+
+    function startAutoplay() {
+        autoplayInterval = setInterval(nextSlide, 5000);
+    }
+
+    function stopAutoplay() {
+        clearInterval(autoplayInterval);
+    }
+
+    // Dot click handlers
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            const slideIndex = parseInt(dot.dataset.slide);
+            goToSlide(slideIndex);
+            stopAutoplay();
+            startAutoplay();
+        });
+    });
+
+    // Pause on hover
+    slider.addEventListener('mouseenter', stopAutoplay);
+    slider.addEventListener('mouseleave', startAutoplay);
+
+    // Start autoplay
+    startAutoplay();
 }
 
 /**
