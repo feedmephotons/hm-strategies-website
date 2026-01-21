@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Page Not Found | H&M Strategies</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #1e2d3a;
+            --cream: #faf8f5;
+            --accent: #8b7355;
+            --gray-500: #737373;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--cream);
+            color: var(--navy);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .error-container {
+            max-width: 500px;
+        }
+
+        .error-code {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(6rem, 20vw, 10rem);
+            font-weight: 400;
+            line-height: 1;
+            color: var(--navy);
+            opacity: 0.1;
+            margin-bottom: -2rem;
+            position: relative;
+            z-index: 0;
+        }
+
+        .error-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .error-message {
+            font-size: 1rem;
+            color: var(--gray-500);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .error-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            color: var(--navy);
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border: 1.5px solid var(--navy);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .error-link:hover {
+            background-color: var(--navy);
+            color: white;
+        }
+
+        .error-link svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .error-link:hover svg {
+            transform: translateX(-4px);
+        }
+
+        .logo {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        /* Decorative elements */
+        .decor-circle {
+            position: fixed;
+            border: 1px solid rgba(139, 115, 85, 0.1);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .decor-circle:nth-child(1) {
+            width: 400px;
+            height: 400px;
+            top: -100px;
+            right: -100px;
+        }
+
+        .decor-circle:nth-child(2) {
+            width: 300px;
+            height: 300px;
+            bottom: -50px;
+            left: -50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="decor-circle"></div>
+    <div class="decor-circle"></div>
+
+    <a href="/" class="logo">
+        <img src="assets/images/logo.png" alt="H&M Strategies">
+    </a>
+
+    <div class="error-container">
+        <div class="error-code">404</div>
+        <h1 class="error-title">Page not found</h1>
+        <p class="error-message">
+            The page you're looking for doesn't exist or has been moved.
+            Let's get you back on track.
+        </p>
+        <a href="/" class="error-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Back to Home
+        </a>
+    </div>
+</body>
+</html>
